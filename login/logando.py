@@ -1,3 +1,4 @@
+from models import toplevelwindows
 import customtkinter as ctk
 from tkinter import *
 from PIL import ImageTk, Image
@@ -11,7 +12,9 @@ janela.title('Sistema de login')
 janela.resizable(False, False)
 def botao1_event():
     print('botão pressionado')
-botao2_event=botao1_event
+def botao2_event():
+    toplevelwindows.ExampleApp.create_toplevel()
+    
 
 img= ctk.CTkImage(Image.open('images/eumoleton.png'),size=(350,400))
 label_img = ctk.CTkLabel(master=janela,
@@ -21,7 +24,7 @@ label_img = ctk.CTkLabel(master=janela,
 label_img.place(relx=0.8, rely=0.5, anchor=ctk.CENTER)
 
 campo_0 = ctk.CTkLabel(master=janela,
-                    text='Teste 001',
+                    text='Usuário',
                     width=180,
                     height=40,
                     fg_color=("blue"),
@@ -37,7 +40,7 @@ espaco_0 = ctk.CTkEntry(master=janela,
 espaco_0.place(relx=0.40, rely=0.1, anchor=ctk.CENTER)
 
 campo_1 = ctk.CTkLabel(master=janela,
-                    text='Teste 002',
+                    text='Senha',
                     width=180,
                     height=40,
                     fg_color=("blue"),
