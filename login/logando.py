@@ -1,10 +1,13 @@
-from models import toplevelwindows
+import telaregistro
 import customtkinter as ctk
 from tkinter import *
 from PIL import ImageTk, Image
+import tripleTdb
+
+#Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 
 ctk.set_appearance_mode('dark')
-ctk.set_default_color_theme('dark-blue')
+ctk.set_default_color_theme('theme/acid_purple.json')
 
 janela = ctk.CTk()
 janela.geometry('700x400')
@@ -13,7 +16,7 @@ janela.resizable(False, False)
 def botao1_event():
     print('botão pressionado')
 def botao2_event():
-    toplevelwindows.ExampleApp.create_toplevel()
+    telaregistro.ExampleApp.create_toplevel()
     
 
 img= ctk.CTkImage(Image.open('images/eumoleton.png'),size=(350,400))
@@ -27,7 +30,8 @@ campo_0 = ctk.CTkLabel(master=janela,
                     text='Usuário',
                     width=180,
                     height=40,
-                    fg_color=("blue"),
+                    fg_color=(["#9932CC", "#8A2BE2"]),
+                    text_color= (["#F8F8FF", "#BEBEBE"]),
                     corner_radius=8)
 campo_0.place(relx=0.132, rely=0.1, anchor=ctk.CENTER)
 
@@ -43,7 +47,8 @@ campo_1 = ctk.CTkLabel(master=janela,
                     text='Senha',
                     width=180,
                     height=40,
-                    fg_color=("blue"),
+                    fg_color=(["#9932CC", "#8A2BE2"]),
+                    text_color= (["#F8F8FF", "#BEBEBE"]),
                     corner_radius=8)
 campo_1.place(relx=0.132, rely=0.24, anchor=ctk.CENTER)
 
