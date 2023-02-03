@@ -1,9 +1,8 @@
-import telaregistro
+from telaregistro import ExampleApp
+
 import customtkinter as ctk
 from tkinter import *
 from PIL import ImageTk, Image
-import tripleTdb
-
 #Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 
 ctk.set_appearance_mode('dark')
@@ -14,17 +13,18 @@ janela.geometry('700x400')
 janela.title('Sistema de login')
 janela.resizable(False, False)
 def botao1_event():
-    print('botão pressionado')
+    from animation import Gif
+    Gif.update(ind=0)
 def botao2_event():
-    telaregistro.ExampleApp.create_toplevel()
+    ExampleApp.create_toplevel()
     
 
 img= ctk.CTkImage(Image.open('images/eumoleton.png'),size=(350,400))
-label_img = ctk.CTkLabel(master=janela,
+imagem_pedro = ctk.CTkLabel(master=janela,
                             text='',
                             image=img,)
 
-label_img.place(relx=0.8, rely=0.5, anchor=ctk.CENTER)
+imagem_pedro.place(relx=0.8, rely=0.5, anchor=ctk.CENTER)
 
 campo_0 = ctk.CTkLabel(master=janela,
                     text='Usuário',
