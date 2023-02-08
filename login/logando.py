@@ -13,8 +13,8 @@ janela.geometry('700x400')
 janela.title('Sistema de login')
 janela.resizable(False, False)
 def botao1_event():
-    from animation import Gif
-    Gif.update(ind=0)
+    import animation
+    animation.ImageLabel.load()
 def botao2_event():
     ExampleApp.create_toplevel()
     
