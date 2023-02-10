@@ -1,8 +1,8 @@
 from telaregistro import ExampleApp
-
 import customtkinter as ctk
 from tkinter import *
 from PIL import ImageTk, Image
+
 #Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 
 ctk.set_appearance_mode('dark')
@@ -12,8 +12,8 @@ janela = ctk.CTk()
 janela.geometry('700x400')
 janela.title('Sistema de login')
 janela.resizable(False, False)
-def botao1_event():
-    import animation
+def botao1_event1():
+    import animation    
     animation.ImageLabel.load()
 def botao2_event():
     ExampleApp.create_toplevel()
@@ -67,7 +67,7 @@ botao1 = ctk.CTkButton(master=janela,
                         height=40,
                         border_width=2,
                         corner_radius=10,
-                        command=botao1_event)
+                        command=lambda:[botao1_event1()])
 botao1.place(relx=0.26, rely=0.45, anchor=ctk.CENTER)
 
 botao2 = ctk.CTkButton(master=janela,

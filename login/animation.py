@@ -2,12 +2,14 @@ import customtkinter as cstk
 import tkinter as tk
 from PIL import Image, ImageTk
 from itertools import count, cycle
-
+import tocamusica
+root = cstk.CTkToplevel()
 class ImageLabel(tk.Label):
     """
     A Label that displays images, and plays them if they are gifs
     :im: A PIL Image instance or a string filename
     """
+
     def load(self, im):
         if isinstance(im, str):
             im = Image.open(im)
@@ -28,9 +30,10 @@ class ImageLabel(tk.Label):
 
         if len(frames) == 1:
             self.config(image=next(self.frames))
+            
         else:
             self.next_frame()
-
+       
     def unload(self):
         self.config(image=None)
         self.frames = None
@@ -41,7 +44,7 @@ class ImageLabel(tk.Label):
             self.after(self.delay, self.next_frame)
 
 #demo :
-root = cstk.CTkToplevel()
+
 lbl = ImageLabel(root)
 lbl.pack()
 lbl.load('images/emasb.gif')
